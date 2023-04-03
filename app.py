@@ -126,8 +126,8 @@ def main():
                             unsafe_allow_html=True)
                 kpi6_text = st.markdown("0")
             
-            detect(weights=weights, 
-                   source=video.name,  
+            detect(weights="best.pt", 
+                   source="video.name",  
                    stframe=stframe, 
                    kpi5_text=kpi5_text,
                    kpi6_text = kpi6_text,
@@ -164,7 +164,7 @@ def main():
                             unsafe_allow_html=True)
                 kpi6_text = st.markdown("0")
             
-            detect(weights=weights, 
+            detect(weights=best.pt, 
                    source="0",  
                    stframe=stframe, 
                    kpi5_text=kpi5_text,
