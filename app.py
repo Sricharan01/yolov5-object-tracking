@@ -90,7 +90,7 @@ def main():
         nosave = True
         display_labels = True 
            
-    weights = "yolov5n.pt"
+    weights = "best.pt"
     device="cpu"
 
     # ------------------------- LOCAL VIDEO ------------------------
@@ -99,6 +99,11 @@ def main():
         video = st.sidebar.file_uploader("Select input video", 
                                         type=["mp4", "avi"], 
                                         accept_multiple_files=False)
+        if video:
+            vid_file = "data/uploaded_data/upload." + video.name.split('.')[-1]
+            with open(vid_file, 'wb') as out:
+                out.write(video.read())
+        
         
         if st.sidebar.button("Start Tracking"):
             
