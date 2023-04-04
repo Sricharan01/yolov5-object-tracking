@@ -97,7 +97,7 @@ def main():
     if input_source == "Video":
         
         video = st.sidebar.file_uploader("Select input video", 
-                                        type=["mp4", "avi"],key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, 
+                                        type=["mp4", "avi"], args=None, kwargs=None, disabled=False, 
                                         accept_multiple_files=False)
         
          
