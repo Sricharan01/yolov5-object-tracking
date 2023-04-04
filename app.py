@@ -101,9 +101,11 @@ def main():
         
         video = st.sidebar.file_uploader("Select input video", 
                                         type=["mp4", "avi"])
-        tfile = tempfile.NamedTemporaryFile(delete=False)
-        tfile.write(video.read())
-        vf = cv.VideoCapture(tfile.name)                                 
+        if f is not None:
+            path_in = video.name
+            print(path_in)
+        else:
+            path_in = None                                 
                                          
                                          
         
