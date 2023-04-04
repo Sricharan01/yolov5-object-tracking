@@ -1,5 +1,6 @@
 from tempfile import NamedTemporaryFile
 import streamlit as st
+import tempfile
 
 from obj_det_and_trk_streamlit import *
 
@@ -100,16 +101,20 @@ def main():
         
         video = st.sidebar.file_uploader("Select input video", 
                                         type=["mp4", "avi"], args=None, kwargs=None, disabled=False, 
-#         uploaded_file = st.file_uploader("File upload", type='csv')
-        with NamedTemporaryFile(dir='.', suffix='.jpg', '.png', '.jpeg') as video :
-                                         video.write(uploaded_file.getbuffer())
-                                         your_function_which_takes_a_path(video.name)
+
 
 #         if video:
 #             vid_file = "data/uploaded_data/upload." + video.name.split('.')[-1]
 #             with open(vid_file, 'wb') as out:
 #                 out.write(video.read())
-        
+
+
+        f = st.file_uploader("Upload file")
+        tfile = tempfile.NamedTemporaryFile(delete=False)
+        tfile.write(f.read())
+        vf = cv.VideoCapture(tfile.name)                                 
+                                         
+                                         
         
         if st.sidebar.button("Start Tracking"):
             
