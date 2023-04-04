@@ -97,8 +97,10 @@ def main():
     if input_source == "Video":
         
         video = st.sidebar.file_uploader("Select input video", 
-                                        type=["mp4", "avi"], 
+                                        type=["mp4", "avi"],key=None, help=None, on_change=None, args=None, kwargs=None, disabled=True, 
                                         accept_multiple_files=False)
+        
+         label_visibility="visible")
         if video:
             vid_file = "data/uploaded_data/upload." + video.name.split('.')[-1]
             with open(vid_file, 'wb') as out:
