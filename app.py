@@ -100,7 +100,7 @@ def main():
                                         type=["mp4", "avi"], args=None, kwargs=None, disabled=False, 
        #Ori                                 accept_multiple_files=False)
         if video is not None:
-            path_in = temp
+            path_in = "tep"
             print(path_in)
         else:
             path_in = None
