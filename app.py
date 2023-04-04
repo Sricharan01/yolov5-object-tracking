@@ -99,11 +99,11 @@ def main():
         video = st.sidebar.file_uploader("Select input video", 
                                         type=["mp4", "avi"], args=None, kwargs=None, disabled=False, 
        #Ori                                 accept_multiple_files=False)
-        if video is not None:
-            path_in = "tep"
-            print(path_in)
-        else:
-            path_in = None
+            if video is not None:
+                path_in = "tep"
+                print(path_in)
+            else:
+                path_in = None
          #...........
         if video:
             vid_file = "data/uploaded_data/upload." + video.name.split('.')[-1]
