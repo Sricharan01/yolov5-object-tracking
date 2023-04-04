@@ -101,18 +101,9 @@ def main():
         
         video = st.sidebar.file_uploader("Select input video", 
                                         type=["mp4", "avi"], args=None, kwargs=None, disabled=False, 
-
-
-#         if video:
-#             vid_file = "data/uploaded_data/upload." + video.name.split('.')[-1]
-#             with open(vid_file, 'wb') as out:
-#                 out.write(video.read())
-
-
-#         video = st.file_uploader("Upload file")
-        tfile = tempfile.NamedTemporaryFile(delete=False)
-        tfile.write(video.read())
-        vf = cv.VideoCapture(tfile.name)                                 
+        file = tempfile.NamedTemporaryFile(delete=False)
+        file.write(video.read())
+        vf = cv.VideoCapture(file.name)                                 
                                          
                                          
         
