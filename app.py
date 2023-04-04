@@ -111,7 +111,7 @@ def main():
 
 #         video = st.file_uploader("Upload file")
         tfile = tempfile.NamedTemporaryFile(delete=False)
-        tfile.write(f.read())
+        tfile.write(video.read())
         vf = cv.VideoCapture(tfile.name)                                 
                                          
                                          
