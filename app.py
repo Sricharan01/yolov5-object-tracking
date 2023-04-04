@@ -1,4 +1,6 @@
+from tempfile import NamedTemporaryFile
 import streamlit as st
+
 from obj_det_and_trk_streamlit import *
 
 #--------------------------------Web Page Designing------------------------------
@@ -98,13 +100,11 @@ def main():
         
         video = st.sidebar.file_uploader("Select input video", 
                                         type=["mp4", "avi"], args=None, kwargs=None, disabled=False, 
-       #Ori                                 accept_multiple_files=False)
-        if video is not None:
-            path_in = "tep"
-            print(path_in)
-        else:
-            path_in = None
-         #...........
+#         uploaded_file = st.file_uploader("File upload", type='csv')
+        with NamedTemporaryFile(dir='.', suffix='.jpg', '.png', '.jpeg') as video :
+                                         video.write(uploaded_file.getbuffer())
+                                         your_function_which_takes_a_path(video.name)
+
 #         if video:
 #             vid_file = "data/uploaded_data/upload." + video.name.split('.')[-1]
 #             with open(vid_file, 'wb') as out:
