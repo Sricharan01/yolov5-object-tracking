@@ -101,7 +101,7 @@ def main():
         
         video = st.sidebar.file_uploader("Select input video", 
                                         type=["mp4", "avi"])
-        if f is not None:
+        if video is not None:
             path_in = video.name
             print(path_in)
         else:
