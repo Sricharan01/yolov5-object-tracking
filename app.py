@@ -100,7 +100,7 @@ def main():
     if input_source == "Video":
         
         video = st.sidebar.file_uploader("Select input video", 
-                                        type=["mp4", "avi"], args=None, kwargs=None, disabled=False, 
+                                        type=["mp4", "avi"])
         file = tempfile.NamedTemporaryFile(delete=False)
         file.write(video.read())
         vf = cv.VideoCapture(file.name)                                 
